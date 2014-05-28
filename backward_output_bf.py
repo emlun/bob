@@ -11,10 +11,11 @@ if len(sys.argv) > 1:
     width = int(sys.argv[1])
 
 output_lines = ['']
-def output(c):
-    output_lines[-1] += c
-    if len(output_lines[-1]) == width:
-        output_lines.append('')
+def output(s):
+    output_lines[-1] += s
+    while len(output_lines[-1]) >= width:
+        output_lines.append(output_lines[-1][width:])
+        output_lines[-2] = output_lines[-2][:width]
 
 
 desired_output_code_sequence = []
