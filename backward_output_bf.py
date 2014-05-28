@@ -10,6 +10,13 @@ width = 80
 if len(sys.argv) > 1:
     width = int(sys.argv[1])
 
+output_lines = ['']
+def output(c):
+    output_lines[-1] += c
+    if len(output_lines[-1]) == width:
+        output_lines.append('')
+
+
 desired_output_code_sequence = []
 for line in sys.stdin:
     for c in line:
@@ -28,13 +35,6 @@ print('<')
 
 
 current_register = len(output_language)-1
-output_lines = ['']
-def output(c):
-    output_lines[-1] += c
-    if len(output_lines[-1]) == width:
-        output_lines.append('')
-
-
 for i in desired_output_code_sequence:
     while i < output_language[current_register]:
         output('<')
