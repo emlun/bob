@@ -18,11 +18,16 @@ for line in sys.stdin:
 output_language = list(set(desired_output_code_sequence))
 output_language.sort()
 
+prev_value = 0
 for i in range(0, len(output_language)):
-    print('+'*output_language[i], '>')
+    print('+'*(output_language[i] - prev_value))
+    # Add current to next
+    print('[->+>+<<]>>[-<<+>>]<')
+    prev_value = output_language[i]
+print('<')
+
 
 current_register = len(output_language)-1
-print('<')
 output_lines = ['']
 def output(c):
     output_lines[-1] += c
