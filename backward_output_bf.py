@@ -5,18 +5,18 @@
 
 import sys
 
-width = 80
+WIDTH = 80
 
 if len(sys.argv) > 1:
-    width = int(sys.argv[1])
+    WIDTH = int(sys.argv[1])
 
 # Utility function for printing neatly aligned lines
 output_lines = ['']
 def output(s):
     output_lines[-1] += s
-    while len(output_lines[-1]) >= width:
-        output_lines.append(output_lines[-1][width:])
-        output_lines[-2] = output_lines[-2][:width]
+    while len(output_lines[-1]) >= WIDTH:
+        output_lines.append(output_lines[-1][WIDTH:])
+        output_lines[-2] = output_lines[-2][:WIDTH]
 
 
 # Read STDIN into a list of character codes
