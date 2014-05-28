@@ -28,11 +28,11 @@ output_language.sort()
 
 prev_value = 0
 for i in range(0, len(output_language)):
-    print('+'*(output_language[i] - prev_value))
+    output('+'*(output_language[i] - prev_value))
     # Add current to next
-    print('[->+>+<<]>>[-<<+>>]<')
+    output('[->+>+<<]>>[-<<+>>]<')
     prev_value = output_language[i]
-print('<')
+output('<')
 
 
 current_register = len(output_language)-1
