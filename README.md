@@ -6,7 +6,7 @@ takes input on STDIN and outputs a Brainfuck program that outputs the input.
 
 Example:
 
-    echo '      ++++         +++
+    $ echo '      ++++         +++
         +[>++++    ++[>+<-][
        <]<  -]>   >++    +++
       +.-   ---   ---    ---
