@@ -15,6 +15,14 @@ for line in sys.stdin:
     for c in line:
         desired_output_code_sequence.append(ord(c))
 
+output_language = list(set(desired_output_code_sequence))
+output_language.sort()
+
+for i in range(0, len(output_language)):
+    print('+'*output_language[i], '>')
+
+current_register = len(output_language)-1
+print('<')
 output_lines = ['']
 def output(c):
     output_lines[-1] += c
@@ -22,14 +30,13 @@ def output(c):
         output_lines.append('')
 
 
-current_value = 0
 for i in desired_output_code_sequence:
-    while current_value < i:
-        output('+')
-        current_value += 1
-    while current_value > i:
-        output('-')
-        current_value -= 1
+    while i < output_language[current_register]:
+        output('<')
+        current_register -= 1
+    while i > output_language[current_register]:
+        output('>')
+        current_register += 1
     output('.')
 
 for line in output_lines:
