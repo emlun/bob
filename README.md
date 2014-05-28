@@ -2,7 +2,8 @@ Backward Output Brainfuck
 =========================
 
 Nerd sniped myself after seeing [this Code Golf answer][codegolf]. This script
-takes input on STDIN and outputs a Brainfuck program that outputs the input.
+takes input on STDIN and outputs a [Brainfuck][bf] program that outputs the
+input.
 
 Example:
 
@@ -44,4 +45,5 @@ License
 [GNU General Public License][gpl], version 2 or later.
 
 [codegolf]: http://codegolf.stackexchange.com/a/21857/15322
+[bf]: http://esoteric.sange.fi/brainfuck/impl/interp/i.html
 [gpl]: https://www.gnu.org/licenses/
